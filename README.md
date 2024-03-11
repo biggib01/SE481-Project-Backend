@@ -6,6 +6,12 @@
 ## Setup
   Use the data available at https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews/data
 
+  Please install python first before continue.
+
+  >pip install requirements.txt
+
+  >python app.py
+
 ## Use cases
   - UC-001: User authentication
     - Description: The user shall have the ability to securely log in to and log out of the food bookmarking and recommendation application.
