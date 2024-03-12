@@ -7,12 +7,24 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
+from package.preprocess import readCSV
+
+data = None
+
+
+def prepareSearchData():
+    global data
+
+    path = '/Users/supachokjirarojkul/Desktop/SE481-Project-Backend/resource/archive/recipes.csv'
+    data = readCSV(path)
+
+
 # string.punctuation use to remove symbol (e.g. !"#$%&'()*+, -./:;<=>?@[\]^_`{|}~)
 def remove_puncts(input_string, string):
     return str(input_string).translate(str.maketrans('', '', string.punctuation)).lower()
 
+
 def searchByName(query):
-    data = pd.read_csv('/Users/supachokjirarojkul/Desktop/SE481-Project-Backend/resource/archive/recipes.csv')
     title = data['Name']
     # with open('resource/name.txt', 'w') as f:
     #     f.writelines(title)
@@ -44,8 +56,8 @@ def searchByName(query):
     else:
         return "No result"
 
+
 def searchByIngredient(query):
-    data = pd.read_csv('/Users/supachokjirarojkul/Desktop/SE481-Project-Backend/resource/archive/recipes.csv')
     title = data['RecipeIngredientParts']
     # with open('resource/ingredient.txt', 'w') as f:
     #     f.writelines(title)
@@ -79,7 +91,6 @@ def searchByIngredient(query):
 
 
 def searchByCookingProcess(query):
-    data = pd.read_csv('/Users/supachokjirarojkul/Desktop/SE481-Project-Backend/resource/archive/recipes.csv')
     title = data['RecipeInstructions']
     # with open('resource/process.txt', 'w') as f:
     #     f.writelines(title)
@@ -111,3 +122,6 @@ def searchByCookingProcess(query):
     else:
         return "No result"
 
+
+def findById(idnumber):
+    return data.loc[data['RecipeId'] == int(idnumber)]
