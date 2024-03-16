@@ -1,11 +1,6 @@
-import csv
 import string
 from rank_bm25 import BM25Okapi
 import numpy as np
-import pandas as pd
-import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
 
 from package.preprocess import readCSV
 
@@ -54,7 +49,7 @@ def searchByName(query):
     elif 10 >= relevent_document > 0:
         return data.iloc[rank[:relevent_document]]
     else:
-        return "No result"
+        return
 
 
 def searchByIngredient(query):
@@ -87,7 +82,7 @@ def searchByIngredient(query):
     elif 10 >= relevent_document > 0:
         return data.iloc[rank[:relevent_document]]
     else:
-        return "No result"
+        return
 
 
 def searchByCookingProcess(query):
@@ -120,7 +115,7 @@ def searchByCookingProcess(query):
     elif 10 >= relevent_document > 0:
         return data.iloc[rank[:relevent_document]]
     else:
-        return "No result"
+        return
 
 
 def findById(idnumber):

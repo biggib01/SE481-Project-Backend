@@ -1,7 +1,4 @@
-import json
-
 from flask import Flask, request, jsonify, make_response
-from flask import Flask, request
 import pandas as pd
 import package.search as search
 from flask_cors import CORS
@@ -27,13 +24,14 @@ def SearchByName():
         response = make_response(jsonResult)
         response.headers['Access-Control-Allow-Origin'] = '*'
         response.headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
+        return response, 200
     else:
-        jsonResult = {'response': '404', 'similar': result}
+        jsonResult = {'similar': list(result)}
+        print(jsonResult)
         response = make_response(jsonResult)
         response.headers['Access-Control-Allow-Origin'] = '*'
         response.headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
+        return response, 404
 
 
 @app.route('/ingredient', methods=['GET'])
@@ -48,13 +46,13 @@ def SearchByIngredient():
         response = make_response(jsonResult)
         response.headers['Access-Control-Allow-Origin'] = '*'
         response.headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
+        return response, 200
     else:
-        jsonResult = {'response': '404', 'similar': result}
+        jsonResult = {'similar': result}
         response = make_response(jsonResult)
         response.headers['Access-Control-Allow-Origin'] = '*'
         response.headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
+        return response, 404
 
 
 @app.route('/process', methods=['GET'])
@@ -69,13 +67,13 @@ def SearchByCookingProcess():
         response = make_response(jsonResult)
         response.headers['Access-Control-Allow-Origin'] = '*'
         response.headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
+        return response, 200
     else:
-        jsonResult = {'response': '404', 'similar': result}
+        jsonResult = {'similar': result}
         response = make_response(jsonResult)
         response.headers['Access-Control-Allow-Origin'] = '*'
         response.headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
+        return response, 404
 
 
 @app.route('/find', methods=['GET'])
@@ -93,13 +91,13 @@ def FindByID():
 
         response.headers['Access-Control-Allow-Origin'] = '*'
         response.headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
+        return response, 200
     else:
-        jsonResult = {'response': '404', 'similar': result}
+        jsonResult = {'Error': 'Dish id not found'}
         response = make_response(jsonResult)
         response.headers['Access-Control-Allow-Origin'] = '*'
         response.headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
+        return response, 404
 
 
 if __name__ == '__main__':

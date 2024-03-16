@@ -49,15 +49,15 @@
 ## Scoring rubrics (total 20 points)
   | Task | 1 point | 2 points | Finished |
   |------|----------------|-----------------|------------|
-  | It is a web application | The landing page displays three lists of dishes as specified in the use case description. | Include authentication functionality. | 
+  | It is a web application | The landing page displays three lists of dishes as specified in the use case description. | Include authentication functionality. | ✔
   | Search | The user can search by dish name, ingredient, or cooking process individually.  *Note all must be implemented.* | The user can search by any combination of dish name, ingredient, and cooking process simultaneously. |
   | Spell collection | Spell collection is automatically launched once a typo is identified. | A well-designed UX that prompts the user to confirm if the suggested corrections for typos should be used. |
-  | Detailed dish information | A modal containing complete dish information as described in the use case is provided, along with necessary UX elements. | - |
+  | Detailed dish information | A modal containing complete dish information as described in the use case is provided, along with necessary UX elements. | - | ✔
   | Folder management | Folder management functionality is complete as described in the use case and includes necessary UX elements. | - |
   | Bookmarking | The user can bookmark a dish into their specific folder. | The user can assign a rating along with their bookmarking. |
   | Bookmark viewing | The user can view their bookmarked dishes from all folders on one page. | All folders are correctly displayed on one page and bookmarks are ranked, e.g., by the user’s average rating |
   | Suggestionon landing page | Suggestions are correctly displayed on the landing page. | - |
   | More advanced suggestion | - | There is a proof that a machine learning approach excluding kNN can be used to demonstrated enhanced results. |
-  | Configuration Management | Git is used properly following an appropriate workflow. | - |
+  | Configuration Management | Git is used properly following an appropriate workflow. | - | ✔
   | Testing | Only unit tests are appropriately applied. | Tests at higher levels than unit testing are conducted and applied. |
   | Exciting IR features. | One additional beneficial IR-related feature is implemented and proven useful. | Two additional beneficial IR-related feature is implemented and proven useful. |
