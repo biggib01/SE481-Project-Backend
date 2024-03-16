@@ -61,3 +61,5 @@
   | Configuration Management | Git is used properly following an appropriate workflow. | - | ✔
   | Testing | Only unit tests are appropriately applied. | Tests at higher levels than unit testing are conducted and applied. |
   | Exciting IR features. | One additional beneficial IR-related feature is implemented and proven useful. | Two additional beneficial IR-related feature is implemented and proven useful. |
+
+> Estimate point earn: 5
