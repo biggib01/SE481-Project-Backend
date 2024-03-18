@@ -8,7 +8,11 @@
 
   Please install python first before continue.
 
+  >run elasticsearch on your docker container, by this instruction https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
   >pip install requirements.txt
+
+  >change your cert file path, password and http url where your elasticsearch run on docker container
 
   >python app.py
 
